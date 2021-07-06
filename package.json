@@ -1,0 +1,38 @@
+{
+  "name": "arvis-torrent-search",
+  "version": "0.0.1",
+  "description": "arvis workflow interface `torrent-search-api`",
+  "license": "MIT",
+  "author": {
+    "name": "Eugene Lerman",
+    "email": "lerman.gene@gmail.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "postinstall": "arvish-init",
+    "preuninstall": "arvish-cleanup"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "arvis-workflow.json",
+    "media/**"
+  ],
+  "keywords": [
+    "arvis",
+    "workflow",
+    "arvish"
+  ],
+  "dependencies": {
+    "arvish": ">=0.4.6",
+    "chrono-node": "^1.3.11",
+    "date-fns": "^2.0.0-beta.2",
+    "ramda": "^0.26.1",
+    "torrent-search-api": "^2.0.9"
+  }
+}

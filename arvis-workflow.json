@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jopemachine/arvis-extension-validator/master/workflow-schema.json",
+  "category": "Internet",
+  "creator": "Eugene Lerman",
+  "description": "Search a bunch of trackers for stuff",
+  "name": "arvis-torrent-search",
+  "readme": "",
+  "defaultIcon": "icon.png",
+  "version": "0.0.1",
+  "webAddress": "https://github.com/jopemachine/arvis-torrent-search",
+  "enabled": true,
+  "commands": [
+    {
+      "type": "scriptFilter",
+      "command": "torrent",
+      "title": "Search a bunch of trackers for stuff",
+      "subtitle": "",
+      "scriptFilter": "node index.js \"{query}\"",
+      "runningSubtext": "Searching...",
+      "withspace": true,
+      "argType": "required",
+      "actions": [
+        {
+          "type": "open",
+          "modifiers": "normal",
+          "target": "{query}",
+          "actions": [
+            {
+              "modifiers": "normal",
+              "type": "notification",
+              "title": "Magnet link added!",
+              "text": "{var:title} was added to your torrent queue."
+            }
+          ]
+        },
+        {
+          "modifiers": "normal",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    }
+  ]
+}
